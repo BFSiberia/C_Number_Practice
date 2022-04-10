@@ -14,5 +14,5 @@ i++;
 }
 
 int num = 456;
-num %= 10;
+num %= 10; // number = number % 10;
 Console.WriteLine(num);

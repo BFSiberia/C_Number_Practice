@@ -1,0 +1,15 @@
+E:\C_Number_Practice\Example003\obj\Debug\net6.0\Example003.csproj.AssemblyReference.cache
+E:\C_Number_Practice\Example003\obj\Debug\net6.0\Example003.GeneratedMSBuildEditorConfig.editorconfig
+E:\C_Number_Practice\Example003\obj\Debug\net6.0\Example003.AssemblyInfoInputs.cache
+E:\C_Number_Practice\Example003\obj\Debug\net6.0\Example003.AssemblyInfo.cs
+E:\C_Number_Practice\Example003\obj\Debug\net6.0\Example003.csproj.CoreCompileInputs.cache
+E:\C_Number_Practice\Example003\bin\Debug\net6.0\Example003.exe
+E:\C_Number_Practice\Example003\bin\Debug\net6.0\Example003.deps.json
+E:\C_Number_Practice\Example003\bin\Debug\net6.0\Example003.runtimeconfig.json
+E:\C_Number_Practice\Example003\bin\Debug\net6.0\Example003.dll
+E:\C_Number_Practice\Example003\bin\Debug\net6.0\ref\Example003.dll
+E:\C_Number_Practice\Example003\bin\Debug\net6.0\Example003.pdb
+E:\C_Number_Practice\Example003\obj\Debug\net6.0\Example003.dll
+E:\C_Number_Practice\Example003\obj\Debug\net6.0\ref\Example003.dll
+E:\C_Number_Practice\Example003\obj\Debug\net6.0\Example003.pdb
+E:\C_Number_Practice\Example003\obj\Debug\net6.0\Example003.genruntimeconfig.cache

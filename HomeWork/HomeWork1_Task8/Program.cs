@@ -5,9 +5,8 @@ i = 1;
 
 while (i <= number)
 {
-    if (i %2 == 0)
-        Console.Write($"{i} ");
-i++;
+    if (i %2 == 0) Console.Write($"{i} ");
+    i++;
 }
 Console.WriteLine();
 
@@ -16,7 +15,6 @@ i = 1;
 
 while (i <= number)
 {
-    if (i %2 == 0)
-        Console.Write($"{i} ");
-i++;
+    if (i %2 == 0) Console.Write($"{i} ");
+    i++;
 }

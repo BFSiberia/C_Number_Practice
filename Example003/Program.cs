@@ -13,6 +13,6 @@ while (i <= number)
 i++;
 }
 
-int num = 456;
+int num = 782;
 num %= 10; // number = number % 10;
 Console.WriteLine(num);

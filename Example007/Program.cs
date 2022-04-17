@@ -1,9 +1,20 @@
-﻿// int[] coordinates = {1,2};
+﻿void RndCoord (int[]generate)
+{
+    int length = generate.Length;
+    int index = 0;
+    while(index<length)
+    {
+        generate[index] = new Random().Next(-10,10);
+        index++;
+    }
+}
 
-int coordinates = x1, x2, y1,y2;
-x1 = new Random().Next(-10,10);
-x2 = new Random().Next(-10,10);
-y1 = new Random().Next(-10,10);
-y2 = new Random().Next(-10,10);
-double distance = Math.Sqrt(Math.Pow(x1-x2,2)+ Math.Pow(y1-y2,2));
+int[] SysCoord = new int[4];
+    
+RndCoord(SysCoord);
+
+double distance = Math.Sqrt(Math.Pow(SysCoord[0]-SysCoord[2],2)+ Math.Pow(SysCoord[1]-SysCoord[3],2));
+
+Console.WriteLine($"Координаты точки 1: {SysCoord[0]},{SysCoord[1]}");
+Console.WriteLine($"Координаты точки 2: {SysCoord[2]},{SysCoord[3]}");
 Console.WriteLine($"Растояние между точками: {distance}.");

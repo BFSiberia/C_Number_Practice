@@ -5,4 +5,4 @@ if (section == 1) Console.WriteLine("Диапазон координат x>0, y>
 else if (section == 2) Console.WriteLine("Диапазон координат x>0, y<0.");
 else if (section == 3) Console.WriteLine("Диапазон координат x<0, y<0.");
 else if (section == 4) Console.WriteLine("Диапазон координат x>0, y<0.");
-else if (section >=0 & section<5) Console.WriteLine("Номер четверти должен быть в диапазоне от 1 до 4.");
+else Console.WriteLine("Номер четверти должен быть в диапазоне от 1 до 4.");

@@ -9,9 +9,9 @@ while(x==0^ y==0)
 {
     Console.WriteLine("Точка координат не может равняться 0: ");
     Console.WriteLine("Введите точку по оси x: ");
-    int.Parse(Console.ReadLine());
+    x = int.Parse(Console.ReadLine());
     Console.WriteLine("Введите точку по оси y: ");
-    int.Parse(Console.ReadLine());
+    y = int.Parse(Console.ReadLine());
 }
 if(x>0&y>0) 
 {section =1;

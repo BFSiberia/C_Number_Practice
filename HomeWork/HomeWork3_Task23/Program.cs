@@ -6,10 +6,12 @@ int i = 1;
 Console.Write($"Список кубов числа {number}: ");
 
 if (i == number)
-{result = Math.Pow(i,3);
-Console.Write($"{result}.");
+{
+    result = Math.Pow(i,3);
+    Console.Write($"{result}.");
 }
 else
+{
     while (i<number)
     {
         result = Math.Pow(i,3);
@@ -18,3 +20,4 @@ else
     }
     result = Math.Pow(i,3);
     Console.Write($"{result}.");
+}

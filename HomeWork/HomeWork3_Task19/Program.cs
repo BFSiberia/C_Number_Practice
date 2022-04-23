@@ -1,8 +1,6 @@
 ﻿int[] source = {14212, 12821, 23432};
-int length = source.Length;
-int i = 0;
 
-while(i<length)
+for(int i=0; i<source.Length; i++)
 {
     int number = source[i];
     int result = 0;
@@ -14,5 +12,4 @@ while(i<length)
         }
     if (source[i] == result) Console.WriteLine($"Да, число {source[i]} палиндром.");
     else Console.WriteLine($"Нет, число {source[i]} не палиндром.");
-    i++;
 }

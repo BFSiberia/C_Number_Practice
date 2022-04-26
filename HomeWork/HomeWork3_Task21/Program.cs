@@ -1,4 +1,7 @@
-﻿void RndCoord (int[]generate)
+﻿// Напишите программу, которая принимает на вход координаты двух точек
+// и находит расстояние между ними в 3D пространстве.
+
+void RndCoord (int[]generate)
 {
     int length = generate.Length;
     int index = 0;

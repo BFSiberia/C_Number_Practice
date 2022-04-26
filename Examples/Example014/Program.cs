@@ -33,7 +33,7 @@ void PrintArray(int[] array)
 // Задача 37.
 // Найти произведение пар чисел первый и последний, второй и предпоследний.
 
-int[] array = new int[5];
+int[] array = new int[6];
 
 void Pair(int[] array)
 {

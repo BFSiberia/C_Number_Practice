@@ -7,9 +7,9 @@ int[] CreateArrayN(int n)
     int[] array = new int[n];
     for(int i = 0; i<array.Length;i++)
     {
-        Console.Write($"Введите элемент массива {i+1}: "); // Число из консоли
-        array[i] = int.Parse(Console.ReadLine());
-        // array[i] = new Random().Next(1,50); // Случайное число
+        array[i] = new Random().Next(1,50); // Случайное число
+        //Console.Write($"Введите элемент массива {i+1}: "); // Число из консоли
+        //array[i] = int.Parse(Console.ReadLine());
     }
     return array;
 }

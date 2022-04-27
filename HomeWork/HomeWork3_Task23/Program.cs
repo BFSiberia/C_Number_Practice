@@ -2,25 +2,17 @@
 // и выдаёт таблицу кубов чисел от 1 до N.
 
 double number, result;
-Console.Write("Введите число:: ");
+Console.Write("Введите число: ");
 number = double.Parse(Console.ReadLine());
 int i = 1;
 
-Console.Write($"Список кубов числа {number}: ");
+Console.Write($"Список кубов от 1 до {number}: ");
 
-if (i == number)
+while (i<number)
 {
     result = Math.Pow(i,3);
-    Console.Write($"{result}.");
+    Console.Write($"{result}, ");
+    i++;
 }
-else
-{
-    while (i<number)
-    {
-        result = Math.Pow(i,3);
-        Console.Write($"{result}, ");
-        i++;
-    }
-    result = Math.Pow(i,3);
-    Console.Write($"{result}.");
-}
+result = Math.Pow(i,3);
+Console.Write($"{result}.");

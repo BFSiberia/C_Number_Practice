@@ -1,25 +1,25 @@
-﻿// Задает массив из 8 элементов вывод на экран
+﻿// Задает массив из 8 элементов и выводит на экран
 //1,2,5,7,19
 //6,1,33
 
-void CreateArray(int[] array)
+int[] CreateArrayN(int n)
 {
+    int[] array = new int[n];
     for(int i = 0; i<array.Length;i++)
     {
-        array[i] = new Random().Next(1,100);
+        Console.Write($"Введите элемент массива {i+1}: ");
+        array[i] = int.Parse(Console.ReadLine());
     }
+    return array;
 }
 
 void PrintArray(int[] array)
 {
+    Console.Write($"Сгенерированный массив: ");
     for(int i = 0; i<array.Length;i++)
     {
         Console.Write($"{array[i]} ");
     }
 }
 
-int[] array = new int[8];
-
-CreateArray(array);
-Console.Write("Сгенерированный массив: ");
-PrintArray(array);
+PrintArray(CreateArrayN(8));

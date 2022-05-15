@@ -30,20 +30,25 @@ PrintArray(matrix);
 
 Console.WriteLine("Введите позицию искомого элемента: ");
 int element = int.Parse(Console.ReadLine());
-bool presence = false;
 
-for (int i=0;i<matrix.GetLength(0);i++)
+if (element>matrix.GetLength(0)*matrix.GetLength(1))
 {
-    for (int j =0; j<matrix.GetLength(1);j++)
+    Console.WriteLine("Такого элемента не существует.");
+}
+else
+{
+    int count = 1;
+    for (int i=0;i<matrix.GetLength(0);i++)
     {
-        if (matrix[i,j]== element)
+        for (int j=0;j<matrix.GetLength(1);j++)
         {
-        presence= true;
-        Console.WriteLine($"Искомый элемент находится на позиции {i},{j}.");
+            if (count == element)
+            {
+            Console.WriteLine($"Искомый элемент находится на позиции {i}, {j}");
+            return;
+            }   
+            else
+            count++;
         }
-        return presence;
-        // else
-        // Console.WriteLine("Такого элемента не существует.");
-        
     }
 }

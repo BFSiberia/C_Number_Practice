@@ -49,23 +49,23 @@ void PrintArrayDouble(int[,] array)
 // Задача 49. Задайте двумерный массив. Найдите элементы,
 // у которых оба индекса четные и замените эти элементы на их квадраты.
 
-int[,] matrix = new int[3,4];
+int[,] matrix = new int[3, 4];
 
 for (int i = 0; i < matrix.GetLength(0); i++)
 {
     for (int j = 0; j < matrix.GetLength(1); j++)
     {
-        matrix[i, j] = new Random().Next(1,10);
+        matrix[i, j] = new Random().Next(1, 10);
     }
 }
 PrintArrayDouble(matrix);
 
-for (int i = 0; i < matrix.GetLength(0); i=i+2)
+for (int i = 0; i < matrix.GetLength(0); i = i + 2)
 {
-    for (int j = 0; j < matrix.GetLength(1); j=j+2)
+    for (int j = 0; j < matrix.GetLength(1); j = j + 2)
     {
         //if (i%2==0 && j%2==0)
-        matrix[i,j] = matrix[i,j]*matrix[i,j];
+        matrix[i, j] = matrix[i, j] * matrix[i, j];
     }
 }
 PrintArrayDouble(matrix);
@@ -73,13 +73,12 @@ PrintArrayDouble(matrix);
 // Задача 51. Задайте двумерный массив. Найдите сумму элементов,
 // находящихся на главной диагонали (с индексами 0,0 1,1)
 
-int sum =0;
-for (int i = 0; i < matrix.GetLength(0); i++)
+int sum = 0;
+int size = matrix.GetLength(0);                 // Вместо проверок по всему массиву
+if (matrix.GetLength(1) < matrix.GetLength(0))  // находим меньшую сторону
+    size = matrix.GetLength(1);
+for (int i = 0; i < size; i++)                  // проверям условие только по ней
 {
-    for (int j = 0; j < matrix.GetLength(1); j++)
-    {
-        if (i == j)
-        sum = sum + matrix[i,j];
-    }
+    sum = sum + matrix[i,i];                    // по условию задачи индексы равны
 }
 Console.WriteLine(sum);

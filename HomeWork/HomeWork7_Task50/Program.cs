@@ -31,7 +31,7 @@ PrintArray(matrix);
 Console.WriteLine("Введите позицию искомого элемента: ");
 int element = int.Parse(Console.ReadLine());
 
-if (element>matrix.GetLength(0)*matrix.GetLength(1))
+if (element>matrix.Length)
 {
     Console.WriteLine("Такого элемента не существует.");
 }

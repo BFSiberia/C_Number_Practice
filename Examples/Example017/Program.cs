@@ -81,89 +81,98 @@ void PrintArraySingle(int[] array)
 // Частотный словарь содержит  информацию о том, сколько раз 
 // встречается элемент входных данных.
 
-int[] arraySingle =
-{1, 9, 9, 0, 2, 8, 0, 9};
+// int[] arraySingle =
+// {1, 9, 9, 0, 2, 8, 0, 9};
 
-int[,] arrayDouble = FillArrayDouble(3,3);
+// int[,] arrayDouble = FillArrayDouble(3,3);
+// // {
+// //     {1, 2, 3},
+// //     {4, 6, 1},
+// //     {2, 1, 6}
+// // };
+
+// int[,] unique = new int[arrayDouble.Length, 2];
+// int count = 0;
+// bool exist = false; // переменная для проверки вхождения в новый массив
+
+// for (int i = 0; i < arrayDouble.GetLength(0); i++)  //проход по строкам исходного массива
 // {
-//     {1, 2, 3},
-//     {4, 6, 1},
-//     {2, 1, 6}
-// };
+//     for (int j = 0; j < arrayDouble.GetLength(1); j++)  // проход по столбцам
+//     {
+//         exist = false;             // сброс проверки вхождения
+//         for (int c = 0; c < count; c++) // цикл для проверки вхождения уникального элемента
+//         {
+//             if (arrayDouble[i, j] == unique[c, 0])        // проверка вхождения
+//             {
+//                 exist = true;
+//                 unique[c, 1]++;                     // счетчик уникального числа
+//                 break;                              //остановка цикла
+//             }
+//         }
+//         if (exist == false)                     // если нет вхождения
+//         {
+//             unique[count, 0] = arrayDouble[i, j];  // элемент входит в уникальный массив 
+//             unique[count, 1] = 1;       // начало счета уникального числа
+//             count++;                  // сдвиг на пустой элемент уник. массива
+//         }
+//     }
+// }
 
-int[,] unique = new int[arrayDouble.Length, 2];
-int count = 0;
-bool exist = false; // переменная для проверки вхождения в новый массив
+// PrintArrayDouble(unique);
 
-for (int i = 0; i < arrayDouble.GetLength(0); i++)  //проход по строкам исходного массива
-{
-    for (int j = 0; j < arrayDouble.GetLength(1); j++)  // проход по столбцам
-    {
-        exist = false;             // сброс проверки вхождения
-        for (int c = 0; c < count; c++) // цикл для проверки вхождения уникального элемента
-        {
-            if (arrayDouble[i, j] == unique[c, 0])        // проверка вхождения
-            {
-                exist = true;
-                unique[c, 1]++;                     // счетчик уникального числа
-                break;                              //остановка цикла
-            }
-        }
-        if (exist == false)                     // если нет вхождения
-        {
-            unique[count, 0] = arrayDouble[i, j];  // элемент входит в уникальный массив 
-            unique[count, 1] = 1;       // начало счета уникального числа
-            count++;                  // сдвиг на пустой элемент уник. массива
-        }
-    }
-}
-
-PrintArrayDouble(unique);
-
-for (int i = 0; i < count; i++)
-{
-    Console.WriteLine($"Цифра {unique[i, 0]} встречается {unique[i, 1]} раз.");
-}
+// for (int i = 0; i < count; i++)
+// {
+//     Console.WriteLine($"Цифра {unique[i, 0]} встречается {unique[i, 1]} раз.");
+// }
 
 // Задача 59: Задайте двумерный массив из целых чисел. Напишите программу, которая удалит строку и столбец, на
 // пересечении которых расположен наименьший элемент массива.
 
-// int [,] array =
-// {
-//     {1,4,5,2},
-//     {5,9,2,3},
-//     {8,4,2,4},
-//     {5,2,6,7},
-// };
+int[,] array =
+{
+    {2,4,5,2},
+    {5,9,1,3},
+    {8,4,2,4},
+    {5,2,6,7},
+};
 
-// int min = array[0,0];
-// int row = 0;
-// int colomn = 0;
+int min = array[0, 0];
+int row = 0;
+int colomn = 0;
 
-// for (int i=0;i<array.GetLength(0);i++)
-// {
-//     for (int j=0;j<array.GetLength(1);j++)
-//     {
-//         if (array[i,j]<min)
-//         min = array[i,j];
-//         row = i;
-//         colomn =j;
-//     }
-// }
+for (int i = 0; i < array.GetLength(0); i++)
+{
+    for (int j = 0; j < array.GetLength(1); j++)
+    {
+        {
+            if (array[i, j] < min)
+            {
+                min = array[i, j];
+                row = i;
+                colomn = j;
+            }
+        }
+    }
+}
 
-// int [,] newarray = new int[array.GetLength(0)-1,array.GetLength(1)-1];
+int[,] newarray = new int[array.GetLength(0) - 1, array.GetLength(1) - 1];
 
-// for (int i=0;i<newarray.GetLength(0);i++)
-// {
-//     for (int j=0;j<newarray.GetLength(1);j++)
-//     {
+for (int i = 0; i < newarray.GetLength(0); i++)
+{
+    for (int j = 0; j < newarray.GetLength(1); j++)
+    {
+        if (i>=row&& j>= colomn)
+        newarray[i,j] = array[i+1,j+1];
+        else if (i<row && j>= colomn)
+        newarray[i,j] = array[i,j+1];
+        else if (i>=row && j< colomn)
+        newarray[i,j] = array[i+1,j];
+        else
+        newarray[i,j] = array[i,j];
+        
+    }
+        
+}
 
-//         if (i == row ^ j ==colomn)
-//         newarray[i,j] = array[i+1,j+1];
-//         else
-//         newarray[i,j] = array[i,j];
-//     }
-// }
-
-// Console.WriteLine("Минимальное число: "+min);
-// PrintArray(newarray);
+Console.WriteLine("Минимальное число: " + min + "(" + row + "," + colomn + ")");
+PrintArrayDouble(newarray);

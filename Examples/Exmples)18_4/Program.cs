@@ -10,6 +10,6 @@ int Sqr(int a, int b)
     return a * Sqr(a,b-1);
 }
 
-Console.WriteLine(Sqr(2, 3));
+Console.WriteLine(Sqr(3, 5));
 
 

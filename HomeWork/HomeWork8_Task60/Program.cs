@@ -2,18 +2,17 @@
 // Напишите программу, которая будет выводить массив построчно,
 // добавляя индексы каждого элемента.
 
-int[,,] triple = new int[3, 2, 2];
+int[,,] triple = new int[3, 3, 3];
 int[] unique = new int[triple.Length]; // массив уникальных чисел
 bool exist = false; // переменная проверки уникальности
 int count = 0; // индекс в массиве уникальных чисел
-
 for (int i = 0; i < triple.GetLength(0); i++)
 {
     for (int j = 0; j < triple.GetLength(1); j++)
     {
         for (int k = 0; k < triple.GetLength(2); k++)
         {
-            triple[i, j, k] = new Random().Next(1, 13);
+            triple[i, j, k] = new Random().Next(10, 100);
             exist = false;
             for (int c = 0; c < count; c++) //поиск и добавление уник. чисел
             {

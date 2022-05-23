@@ -6,22 +6,25 @@
 int[] array1 = { 0, 1, 1, 1, 1, 0, 0, 0, 1 };
 int[] array2 = { 2, 3, 3, 1 };
 
+// первый цикл перебирает qty по i
+// второй цикл перебирает numbers, по j=counter (счетчик следующего набора), j<numbers.Length, j++
+// третий цикл перебирает result[qty[i]] по k, result [k]= numbers[j], counter+qty[i]   
 
 void Transfer(int[] numbers, int[] qty)
 {
-    int[] result = new int[qty.Length];
-
-    for (int i = 0; i < numbers.Length; i++)
+    int count = 0;
+    for (int i = 0; i < qty.Length; i++)  // перебор массива с количеством символов
     {
-        for (int j = 0; j < qty[j]; j++)
+        int[] result = new int[qty[i]]; // задаем временный массив с результатоми выборки 
+                                        // из массива с цифрами, длиной кол-во символов
+        int numberDecimal = 0; // результат перевода в десятичное число
+        for (int j = 0; j < result.Length; j++) // перебор массива с результатами выборки
         {
-
-            result[i] = numbers[j];
-            Console.WriteLine(result[i] + " ");
-
+            result[j] = numbers[j + count]; // элемент выборки = элементы цифр без учета ранее выбраных
+            numberDecimal += (int)Math.Pow(2, j) * result[j]; // перевод в девятичное число
         }
+        Console.Write(numberDecimal + " ");
+        count = count + qty[i]; // увеличение поправки
     }
 }
-
 Transfer(array1, array2);
-

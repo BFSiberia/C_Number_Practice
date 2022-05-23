@@ -20,11 +20,14 @@ void Transfer(int[] numbers, int[] qty)
         int numberDecimal = 0; // результат перевода в десятичное число
         for (int j = 0; j < result.Length; j++) // перебор массива с результатами выборки
         {
+
             result[j] = numbers[j + count]; // элемент выборки = элементы цифр без учета ранее выбраных
-            numberDecimal += (int)Math.Pow(2, j) * result[j]; // перевод в девятичное число
+            numberDecimal += (int)Math.Pow(2, qty[i]-j-1) * result[j]; // перевод в деcятичное число
+            // степень = количество знаков в двоичном числе - идекс текущего числа выборки - 1
+            // (по аналогии с получением последнего числа массива)
         }
         Console.Write(numberDecimal + " ");
-        count = count + qty[i]; // увеличение поправки
+        count += qty[i]; // увеличение поправки
     }
 }
 Transfer(array1, array2);

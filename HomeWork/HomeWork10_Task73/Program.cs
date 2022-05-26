@@ -38,50 +38,34 @@ void PrintGroups(int[,] array)
         Console.WriteLine();
     }
 }
-long NOD(long x, long y)
-{
-    while (x != y)
-    {
-        if (x > y)
-        {
-            long tmp = x;
-            x = y;
-            y = tmp;
-        }
-        y = y - x;
-    }
-    return x;
-}
 bool Check(int a, int b)
 {
-    return (a%b ==0 || b%a ==0);
+    return (a % b == 0 || b % a == 0);
 }
 
 int x = 50;
 int[,] array = new int[x, x];
 
-//array[0, 0] = 1; // для варианта с взаимно простыми числами
 int l = 0;
 
-for (int i = 1; i <= x; i++) // исходный массив чисел от 2 до 50 для варианта с взаимно простыми числами
+for (int i = 1; i <= x; i++)
 {
-    for (int k = 0; k < array.GetLength(1); k++) //перебор колонок в заданной строке
+    for (int k = 0; k < array.GetLength(1); k++)
     {
-        if (array[l, k] == 0) //проверка элемента строки на 0 значение
+        if (array[l, k] == 0)
         {
             array[l, k] = i;
-            l = 0; // сброс номера строки после каждого присвоения (l=1 для взаимно простых чисел)
-            break; // возврат к вышестоящему циклу
+            l = 0;
+            break;
         }
-        else if (Check(i,array[l,k])) // проверка всех ненулевых элементов строки (NOD для взаимно простых)
+        else if (Check(i, array[l, k]))
         {
-            l++; // если число не взаимно простое с одним из элементов строки, переход на след строку
-            k = -1; // обнуление счетчика колонок
-            continue; // следующая итерация цикла перебора колонок
+            l++;
+            k = -1;
+            continue;
         }
     }
 }
-
 PrintGroups(array);
 
 

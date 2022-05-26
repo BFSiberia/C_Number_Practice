@@ -19,59 +19,65 @@
 // - Группа 5: 16 24 36 40
 // - Группа 6: 32 48
 
-void PrintArray(int[,] array)
+void PrintGroups(int[,] array)
 {
     for (int i = 0; i < array.GetLength(0); i++)
     {
+        if (array[i, 0] == 0)
+        {
+            Console.Write($"Всего групп: {i}.");
+            break;
+        }
+        Console.Write($"Группа {i + 1}: ");
         for (int j = 0; j < array.GetLength(1); j++)
         {
+            if (array[i, j] == 0)
+                break;
             Console.Write(array[i, j] + " ");
         }
         Console.WriteLine();
     }
 }
-int NOD(int x, int y)
+long NOD(long x, long y)
 {
-    return y == 0 ? x : NOD(y, x % y);
-}
-void PrintArraySingle(int[] array)
-{
-    for (int i = 0; i < array.Length; i++)
+    while (x != y)
     {
-        Console.Write(array[i] + " ");
+        if (x > y)
+        {
+            long tmp = x;
+            x = y;
+            y = tmp;
+        }
+        y = y - x;
     }
-    Console.WriteLine();
+    return x;
 }
-
 
 int x = 50;
-int[,] array = new int[10, 45];
-array [0,0] =1;
+int[,] array = new int[x, x];
 
+array[0, 0] = 1;
+int l = 1;
 
-for (int i = 2; i <= x; i++)
+for (int i = 2; i <= x; i++) // исходный массив чисел от 2 до 50
 {
-    int count = 1;
-    for (int l = 1; l < array.GetLength(0); l++)
+    for (int k = 0; k < array.GetLength(1); k++) //перебор колонок в заданной строке
     {
-        if (array[l, 0] == 0)
+        if (array[l, k] == 0) //проверка элемента строки на 0 значение
         {
-            array[l, 0] = i;
-            i++;
+            array[l, k] = i;
+            l = 1; // сброс номера строки после каждого присвоения
+            break; // возврат к вышестоящему циклу
         }
-        for (int c = 0; c <= count; c++)
+        else if (NOD(i, array[l, k]) != 1) // проверка всех ненулевых элементов строки
         {
-            if (NOD(i, array[l, c]) != 1)
-            {
-                break;
-            }
+            l++; // если число не взаимно простое с одним из элементов строки, переход на след строку
+            k = -1; // обнуление счетчика колонок
+            continue; // следующая итерация цикла перебора колонок
         }
-        
     }
 }
 
-
-
-PrintArray(array);
+PrintGroups(array);
 
 

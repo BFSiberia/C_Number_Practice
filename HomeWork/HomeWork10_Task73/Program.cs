@@ -23,11 +23,6 @@ void PrintGroups(int[,] array)
 {
     for (int i = 0; i < array.GetLength(0); i++)
     {
-        if (array[i, 0] == 0)
-        {
-            Console.Write($"Всего групп: {i}.");
-            break;
-        }
         Console.Write($"Группа {i + 1}: ");
         for (int j = 0; j < array.GetLength(1); j++)
         {
@@ -42,9 +37,21 @@ bool Check(int a, int b)
 {
     return (a % b == 0 || b % a == 0);
 }
+int LinesCount(int x)
+{
+    int lines = 0;
+    int count = 1;
+    while (count < x)
+    {
+        count *= 2;
+        lines++;
+    }
+    return lines;
+}
 
 int x = 50;
-int[,] array = new int[x, x];
+
+int[,] array = new int[LinesCount(x), (int)Math.Ceiling((decimal)x/3)];
 
 int l = 0;
 
